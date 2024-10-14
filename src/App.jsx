@@ -24,7 +24,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router  basename="/CookBook-App">
       <Header />
 
       <div className="content-wrapper">

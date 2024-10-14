@@ -25,7 +25,7 @@ function Header() {
             }}
           >
             CookBook
-            <img className="icon" src="/icon.svg" alt="icon" />
+            <img className="icon" src={`${import.meta.env.BASE_URL}/icon.svg`} alt="icon" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
