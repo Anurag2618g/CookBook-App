@@ -1,20 +1,82 @@
 body {
     background-color: #070F2B;
-}
-
-.wave-img {
-    width: 100%;
-    height: 30px;
-    object-fit: cover;
-    display: block;
-}
-
-.divider {
-    display: block;
-    width: 100%;
-    object-fit: cover;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
 
 .navbar {
-    height: 90px;
+    height: 80px;
+    z-index: 2;
+}
+
+.icon {
+    width: 2rem;
+    height: auto;
+}
+
+/* Container for home image and recipes */
+.home-recipe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Home image styling */
+.image-home {
+    width: 100%;
+    display: block;
+    margin-bottom: 35px; 
+}
+
+.image-home img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: -1;
+}
+
+/* Recipe container styling with left alignment */
+.recipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; 
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Recipe card styling */
+.recipe-card {
+    flex: 1 1 calc(33.33% - 40px); 
+    max-width: 300px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: 50px;
+}
+
+.content-wrapper {
+    padding-bottom: 80px;
+}
+
+/* Add custom styles for the TextField */
+.MuiTextField-root {
+    background-color: white; /* Make sure input background is visible */
+    border-radius: 4px;
+    margin-bottom: 15px; /* Space between input fields */
+}
+
+/* Styling the input text and placeholder */
+.MuiInputBase-input {
+    color: #070F2B; /* Set text color */
+}
+
+.MuiInputBase-input::placeholder {
+    color: #6c757d; /* Adjust placeholder text color */
 }
