@@ -10,6 +10,8 @@ import Rating from '@mui/material/Rating';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import DoubleArrowRoundedIcon from '@mui/icons-material/DoubleArrowRounded';
+
 
 export default function RecipeCard(props) {
   const [isFavorited, setIsFavorited] = useState(false);
@@ -18,31 +20,36 @@ export default function RecipeCard(props) {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 340, width:340, background: '#F8F9Fa' }}>
       <CardHeader
+        sx={{ background: '#EEEEEE' }}
         action={
-          <IconButton aria-label="settings" onClick={() => {props.onDelete(props.id)}}>
-            <DeleteIcon />
+          <IconButton aria-label="add to favorites" onClick={handleFavoriteClick}>
+            <FavoriteIcon sx={{ color: isFavorited ? 'red' : '#cdd1dc' }} />
           </IconButton>
         }
-        title={props.title}
+        title={<Typography variant="h6" sx={{ fontSize: 15, fontWeight: 'bold', color: '#070F2B', fontFamily: 'Playfair Display, serif' }}>
+          {props.title}
+        </Typography>}
+
       />
       <CardMedia
         component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
+        height="200"
+        image={URL.createObjectURL(props.image)}
         alt={props.title}
       />
-      <CardContent>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+      <CardContent sx={{ flexGrow: 1}}>
+        <Typography variant="body2" sx={{ color: 'text.secondary', justifyContent: 'center' }}>
           {props.description}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <IconButton aria-label="add to favorites" onClick={handleFavoriteClick}>
-          <FavoriteIcon sx={{ color: isFavorited ? 'red' : 'gray' }} />
+      <CardActions disableSpacing sx={{ display: 'flex', justifyContent: 'space-between', background: '#EEEEEE' }}>
+        <Rating name="half-rating" sx={{color: '#070f2b'}} defaultValue={props.rating} precision={1} />         
+        <IconButton aria-label="settings" sx={{color: '#070f2b'}} onClick={() => {props.onDelete(props.id)}}>
+          <DeleteIcon />
         </IconButton>
-        <Rating name="half-rating" defaultValue={props.rating} precision={1} />
+        <DoubleArrowRoundedIcon />
       </CardActions>
     </Card>
   );
@@ -51,10 +58,10 @@ export default function RecipeCard(props) {
 RecipeCard.propTypes = {
   onDelete: PropTypes.func,
   id: PropTypes.number.isRequired,
-  key: PropTypes.number,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   rating: PropTypes.number,
+  image: PropTypes.string,
 };
 
 RecipeCard.defaultProps = {

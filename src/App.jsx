@@ -42,6 +42,7 @@ function App() {
                       title={recipe.title}
                       description={recipe.description}
                       rating={recipe.rating}
+                      image={recipe.image}
                       onDelete={() => deleteElement(index)}
                     />
                   ))}

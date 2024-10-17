@@ -1,6 +1,9 @@
 body {
-    background-color: #070F2B;
-    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    background-color: #070f2b;
+
+    /* background-image: url("https://www.transparenttextures.com/patterns/flowers.png"); */
+
+    background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
 }
 
 .navbar {
@@ -26,7 +29,6 @@ body {
 .image-home {
     width: 100%;
     display: block;
-    margin-bottom: 35px; 
 }
 
 .image-home img {
@@ -34,6 +36,13 @@ body {
     height: auto;
     position: relative;
     z-index: -1;
+}
+
+.wave-img {
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: -3;
 }
 
 /* Recipe container styling with left alignment */
@@ -51,7 +60,7 @@ body {
 .recipe-card {
     flex: 1 1 calc(33.33% - 40px); 
     max-width: 300px;
-    background-color: #f4f4f4;
+    background-color: #F8F9Fa;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -67,16 +76,16 @@ footer {
 
 /* Add custom styles for the TextField */
 .MuiTextField-root {
-    background-color: white; /* Make sure input background is visible */
+    background-color: white;
     border-radius: 4px;
-    margin-bottom: 15px; /* Space between input fields */
+    margin-bottom: 15px;
 }
 
 /* Styling the input text and placeholder */
 .MuiInputBase-input {
-    color: #070F2B; /* Set text color */
+    color: #070F2B;
 }
 
 .MuiInputBase-input::placeholder {
-    color: #6c757d; /* Adjust placeholder text color */
+    color: #7d6c71;
 }
